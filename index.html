@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="text" id="userColor">
+    <button id="applyBtn">שנה צבע</button>
+    <button id="nightMode">מצב לילה</button>
+    <div id="displayBox"></div>
+
+    <script>
+        const inp = document.getElementById("userColor")
+        const bnt = document.getElementById("applyBtn")
+        const box = document.getElementById("displayBox")
+        const night = document.getElementById("nightMode")
+
+        night.addEventListener("click", ()=>{
+            document.body.style.background = "black";
+            document.body.style.color = "white";
+        })
+
+        inp.addEventListener("input", ()=>{
+            const value = inp.value
+            console.log(value);
+            box.style.background = value
+        })
+        bnt.addEventListener("click", ()=>{
+            const value = inp.value
+            console.log(value);
+            if (value === ""){
+                alert("נא להכניס צבע!")
+            }
+            box.style.background = value
+            inp.value = '';
+        })
+    </script>
+</body>
+</html>
